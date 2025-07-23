@@ -17,7 +17,7 @@ from dash import Dash, dcc, html, Input, Output, State
 import plotly.graph_objs as go
 from scipy.signal import butter, sosfilt
 
-# Frequency Bands
+  *Frequency Bands*
 bands = [
     (60, 150),     # Sub-bass
     (150, 400),    # Bass
@@ -28,7 +28,7 @@ bands = [
     (8000, 12000), # Brilliance
 ]
 
-# Butterworth bandpass filter
+*Butterworth bandpass filter*
 def butter_bandpass_sos(lowcut, highcut, fs, order=10):
     return butter(order, [lowcut / (0.5 * fs), highcut / (0.5 * fs)], btype='band', output='sos')
 
@@ -53,7 +53,7 @@ def calculate_band_energies(y, sr):
         energies.append(energy)
     return energies
 
-# Dash App
+ *Dash App*
 app = Dash(__name__)
 app.title = "🎚️ Audio Equalizer with Frequency Plot"
 
